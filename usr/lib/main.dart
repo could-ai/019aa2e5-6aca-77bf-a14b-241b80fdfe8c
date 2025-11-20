@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 import 'screens/country_list_screen.dart';
+import 'screens/report_list_screen.dart';
 
 void main() {
   runApp(const EcoInsightApp());
@@ -32,6 +33,9 @@ class EcoInsightApp extends StatelessWidget {
         ),
       ),
       home: const MainNavigationWrapper(),
+      routes: {
+        '/': (context) => const MainNavigationWrapper(),
+      },
     );
   }
 }
@@ -49,7 +53,7 @@ class _MainNavigationWrapperState extends State<MainNavigationWrapper> {
   final List<Widget> _screens = [
     const HomeScreen(),
     const CountryListScreen(),
-    const Center(child: Text('Reports Archive (Coming Soon)')), // Placeholder
+    const ReportListScreen(),
     const Center(child: Text('Settings (Coming Soon)')), // Placeholder
   ];
 
